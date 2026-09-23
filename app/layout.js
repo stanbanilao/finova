@@ -1,0 +1,8 @@
+import "./globals.css";
+import Link from "next/link";
+
+export const metadata={title:"Finova Associates | Debt Review Removal Support",description:"Digital-first debt review removal support in South Africa with eligibility assessment, guided process tracking and clear communication."};
+
+const nav=[["/","Home"],["/debt-removal","Debt Removal"],["/process","Process"],["/eligibility","Check Eligibility"],["/about","About"],["/faq","FAQ"],["/contact","Contact"]];
+
+export default function RootLayout({children}){return <html lang="en"><body><div className="site-shell"><header className="header"><div className="container nav"><Link href="/" className="brand"><span className="brand-mark">F</span><span>Finova Associates</span></Link><nav className="nav-links">{nav.map(([href,label])=><Link key={href} href={href}>{label}</Link>)}</nav><Link className="nav-cta" href="/eligibility">Start Assessment</Link></div></header>{children}<footer className="footer"><div className="container footer-grid"><div><div className="brand"><span className="brand-mark">F</span><span>Finova Associates</span></div><p className="notice">Digital-first support for consumers navigating debt review clearance or withdrawal eligibility. Outcomes depend on each client’s legal and financial circumstances.</p></div><div><h4>Navigate</h4>{nav.slice(1,5).map(([href,label])=><Link key={href} href={href}>{label}</Link>)}</div><div><h4>Support</h4><Link href="/faq">FAQ</Link><Link href="/contact">Contact</Link><p className="small">South Africa</p></div></div></footer></div></body></html>}
