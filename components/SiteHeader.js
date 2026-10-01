@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const nav = [
   ["/", "Home"],
-  ["/debt-removal", "Debt Review Removal"],
+  ["/debt-removal", "Flag Removal"],
   ["/process", "How It Works"],
   ["/eligibility", "Eligibility"],
   ["/experience", "Experience"],
@@ -22,7 +22,7 @@ export default function SiteHeader() {
     <header className="header">
       <div className="container nav">
         <Link href="/" className="brand" onClick={close} aria-label="Finova Associates home">
-          <span className="brand-mark">F</span>
+          <span className="brand-mark">FA</span>
           <span className="brand-copy">
             <span className="brand-finova">Finova</span>
             <span className="brand-associates">Associates</span>

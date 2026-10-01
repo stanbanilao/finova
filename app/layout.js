@@ -1,6 +1,19 @@
 import "./globals.css";
 import Link from "next/link";
+import { Fraunces, Manrope } from "next/font/google";
 import SiteHeader from "../components/SiteHeader";
+
+const displayFont = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-finova-display",
+  display: "swap",
+});
+
+const bodyFont = Manrope({
+  subsets: ["latin"],
+  variable: "--font-finova-body",
+  display: "swap",
+});
 
 export const metadata = {
   title: {
@@ -12,7 +25,7 @@ export const metadata = {
 };
 
 const serviceLinks = [
-  ["/debt-removal", "Debt Review Removal"],
+  ["/debt-removal", "Debt Review Flag Removal"],
   ["/process", "How It Works"],
   ["/eligibility", "Eligibility Assessment"],
   ["/experience", "Our Experience"],
@@ -30,7 +43,7 @@ const companyLinks = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
         <div className="site-shell">
           <SiteHeader />
           {children}
@@ -38,7 +51,7 @@ export default function RootLayout({ children }) {
             <div className="container footer-grid">
               <div className="footer-brand">
                 <Link href="/" className="brand">
-                  <span className="brand-mark">F</span>
+                  <span className="brand-mark">FA</span>
                   <span className="brand-copy">
                     <span className="brand-finova">Finova</span>
                     <span className="brand-associates">Associates</span>
