@@ -4,9 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 
 const nav = [
-  ["/", "Home"],
-  ["/debt-removal", "Flag Removal"],
-  ["/process", "How It Works"],
+  ["/debt-removal", "Services"],
+  ["/process", "Our Process"],
   ["/eligibility", "Eligibility"],
   ["/experience", "Experience"],
   ["/faq", "FAQ"],
@@ -20,12 +19,21 @@ export default function SiteHeader() {
 
   return (
     <header className="header">
+      <div className="topbar">
+        <div className="container topbar-inner">
+          <span>Confidential debt review clearance enquiries</span>
+          <a href="https://wa.me/27672602467" target="_blank" rel="noreferrer">
+            WhatsApp: 067 260 2467
+          </a>
+        </div>
+      </div>
+
       <div className="container nav">
         <Link href="/" className="brand" onClick={close} aria-label="Finova Associates home">
           <span className="brand-mark">FA</span>
           <span className="brand-copy">
-            <span className="brand-finova">Finova</span>
-            <span className="brand-associates">Associates</span>
+            <span className="brand-finova">Finova Associates</span>
+            <span className="brand-associates">Clearance & Status Support</span>
           </span>
         </Link>
 
@@ -47,13 +55,19 @@ export default function SiteHeader() {
               {label}
             </Link>
           ))}
-          <Link className="mobile-nav-cta" href="/eligibility" onClick={close}>
-            Start assessment
-          </Link>
+          <a
+            className="mobile-nav-cta"
+            href="https://wa.me/27672602467?text=Good%20day%20Finova%20Associates.%20I%20would%20like%20help%20with%20debt%20review%20removal."
+            target="_blank"
+            rel="noreferrer"
+            onClick={close}
+          >
+            WhatsApp Finova
+          </a>
         </nav>
 
         <Link className="nav-cta desktop-cta" href="/eligibility">
-          Start assessment
+          Request assessment
         </Link>
       </div>
     </header>

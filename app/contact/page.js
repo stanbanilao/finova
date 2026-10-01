@@ -2,42 +2,65 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Contact",
-  description: "Start a debt review clearance or removal enquiry with Finova Associates.",
+  description: "Contact Finova Associates for debt review clearance and removal support.",
 };
 
 export default function Contact() {
   return (
     <main>
-      <section className="hero">
+      <section className="hero subpage-hero">
         <div className="container hero-grid">
           <div>
-            <span className="eyebrow">Contact Finova</span>
-            <h1>Start with your <span className="accent">current position.</span></h1>
-            <p>The fastest way to begin is the eligibility assessment. It helps organise the first conversation around the facts that matter.</p>
+            <span className="eyebrow light-eyebrow">Contact Finova Associates</span>
+            <h1>Discuss your matter <span className="accent">confidentially.</span></h1>
+            <p>Start with the information you currently have. Finova can then help identify what needs to be checked before a route is confirmed.</p>
             <div className="hero-actions">
-              <Link className="button" href="/eligibility">Start eligibility assessment</Link>
-              <Link className="button secondary" href="/faq">Read common questions</Link>
+              <a
+                className="button gold-button"
+                href="https://wa.me/27672602467?text=Good%20day%20Finova%20Associates.%20I%20would%20like%20help%20with%20debt%20review%20removal."
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp 067 260 2467
+              </a>
+              <a className="button outline-light" href="tel:+27672602467">Call 067 260 2467</a>
             </div>
           </div>
 
-          <div className="hero-card surface-3d">
-            <span className="eyebrow">Before you begin</span>
-            <h3>Have what you know close by.</h3>
+          <aside className="hero-card dark-dossier">
+            <span className="dossier-kicker">Before you contact us</span>
+            <h3>Have what you know available.</h3>
             <div className="info-list">
               <div className="info-row"><strong>Status</strong><span>Are you currently under debt review?</span></div>
               <div className="info-row"><strong>Court</strong><span>Do you know whether a restructuring order exists?</span></div>
               <div className="info-row"><strong>Payments</strong><span>Have the included accounts been settled?</span></div>
               <div className="info-row"><strong>Records</strong><span>Do you have paid-up letters or other case documents?</span></div>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
-      <section className="section alt">
-        <div className="container quote-panel">
-          <span className="eyebrow">Contact channel</span>
-          <blockquote>Your preferred Finova email and WhatsApp details can be connected here next.</blockquote>
-          <p>The website and assessment flow are ready. Once the official business contact details are confirmed, this page can route enquiries directly to your inbox, WhatsApp Business or CRM without changing the rest of the website.</p>
+      <section className="section soft-section">
+        <div className="container contact-grid">
+          <div className="contact-card">
+            <span className="eyebrow">WhatsApp</span>
+            <h2>067 260 2467</h2>
+            <p>Send a message and briefly explain where you are in the debt review process.</p>
+            <a
+              className="button"
+              href="https://wa.me/27672602467?text=Good%20day%20Finova%20Associates.%20I%20would%20like%20help%20with%20debt%20review%20removal."
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open WhatsApp
+            </a>
+          </div>
+          <div className="contact-card">
+            <span className="eyebrow">Online assessment</span>
+            <h2>Start with four questions.</h2>
+            <p>The eligibility checker gives an initial indication of the type of review your matter may require.</p>
+            <Link className="button secondary" href="/eligibility">Start assessment</Link>
+          </div>
         </div>
       </section>
     </main>
