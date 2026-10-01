@@ -1,1 +1,45 @@
-export default function Contact(){return <main><section className="hero"><div className="container hero-grid"><div><span className="eyebrow">Contact Finova</span><h1>Tell us where you are in the process.</h1><p>Use the form to start a conversation. Contact details such as telephone, WhatsApp and office address can be inserted as soon as they are confirmed.</p></div><div className="hero-card"><h3>Start your enquiry</h3><form><div className="form-grid"><div><label className="label">Full name</label><input className="input" placeholder="Your name"/></div><div><label className="label">Phone number</label><input className="input" placeholder="+27 ..."/></div><div><label className="label">Email</label><input className="input" placeholder="you@example.com"/></div><div><label className="label">Current status</label><select className="select" defaultValue=""><option value="" disabled>Select</option><option>Currently under debt review</option><option>All debts paid</option><option>Financial position improved</option><option>Not sure</option></select></div></div><div style={{marginTop:14}}><label className="label">Tell us briefly about your case</label><textarea className="textarea" placeholder="Your message"></textarea></div><div className="hero-actions"><button className="button" type="button">Submit enquiry</button></div><p className="notice">Form currently demonstrates the website flow. Backend email/CRM delivery can be connected once the destination mailbox or CRM is confirmed.</p></form></div></div></section></main>}
+import Link from "next/link";
+
+export const metadata = {
+  title: "Contact",
+  description: "Start a debt review clearance or removal enquiry with Finova Associates.",
+};
+
+export default function Contact() {
+  return (
+    <main>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div>
+            <span className="eyebrow">Contact Finova</span>
+            <h1>Start with your <span className="accent">current position.</span></h1>
+            <p>The fastest way to begin is the eligibility assessment. It helps organise the first conversation around the facts that matter.</p>
+            <div className="hero-actions">
+              <Link className="button" href="/eligibility">Start eligibility assessment</Link>
+              <Link className="button secondary" href="/faq">Read common questions</Link>
+            </div>
+          </div>
+
+          <div className="hero-card surface-3d">
+            <span className="eyebrow">Before you begin</span>
+            <h3>Have what you know close by.</h3>
+            <div className="info-list">
+              <div className="info-row"><strong>Status</strong><span>Are you currently under debt review?</span></div>
+              <div className="info-row"><strong>Court</strong><span>Do you know whether a restructuring order exists?</span></div>
+              <div className="info-row"><strong>Payments</strong><span>Have the included accounts been settled?</span></div>
+              <div className="info-row"><strong>Records</strong><span>Do you have paid-up letters or other case documents?</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container quote-panel">
+          <span className="eyebrow">Contact channel</span>
+          <blockquote>Your preferred Finova email and WhatsApp details can be connected here next.</blockquote>
+          <p>The website and assessment flow are ready. Once the official business contact details are confirmed, this page can route enquiries directly to your inbox, WhatsApp Business or CRM without changing the rest of the website.</p>
+        </div>
+      </section>
+    </main>
+  );
+}

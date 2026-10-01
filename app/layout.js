@@ -1,8 +1,76 @@
 import "./globals.css";
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
 
-export const metadata={title:"Finova Associates | Debt Review Removal Support",description:"Digital-first debt review removal support in South Africa with eligibility assessment, guided process tracking and clear communication."};
+export const metadata = {
+  title: {
+    default: "Finova Associates | Debt Review Flag Removal Support",
+    template: "%s | Finova Associates",
+  },
+  description:
+    "South African debt review clearance and flag-removal support with eligibility assessment, document guidance, case tracking and credit-bureau follow-through.",
+};
 
-const nav=[["/","Home"],["/debt-removal","Debt Removal"],["/process","Process"],["/eligibility","Check Eligibility"],["/about","About"],["/faq","FAQ"],["/contact","Contact"]];
+const serviceLinks = [
+  ["/debt-removal", "Debt Review Removal"],
+  ["/process", "How It Works"],
+  ["/eligibility", "Eligibility Assessment"],
+  ["/experience", "Our Experience"],
+];
 
-export default function RootLayout({children}){return <html lang="en"><body><div className="site-shell"><header className="header"><div className="container nav"><Link href="/" className="brand"><span className="brand-mark">F</span><span>Finova Associates</span></Link><nav className="nav-links">{nav.map(([href,label])=><Link key={href} href={href}>{label}</Link>)}</nav><Link className="nav-cta" href="/eligibility">Start Assessment</Link></div></header>{children}<footer className="footer"><div className="container footer-grid"><div><div className="brand"><span className="brand-mark">F</span><span>Finova Associates</span></div><p className="notice">Digital-first support for consumers navigating debt review clearance or withdrawal eligibility. Outcomes depend on each client’s legal and financial circumstances.</p></div><div><h4>Navigate</h4>{nav.slice(1,5).map(([href,label])=><Link key={href} href={href}>{label}</Link>)}</div><div><h4>Support</h4><Link href="/faq">FAQ</Link><Link href="/contact">Contact</Link><p className="small">South Africa</p></div></div></footer></div></body></html>}
+const companyLinks = [
+  ["/about", "About"],
+  ["/faq", "FAQ"],
+  ["/contact", "Contact"],
+  ["/privacy", "Privacy"],
+  ["/popia", "POPIA"],
+  ["/terms", "Terms"],
+];
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <div className="site-shell">
+          <SiteHeader />
+          {children}
+          <footer className="footer">
+            <div className="container footer-grid">
+              <div className="footer-brand">
+                <Link href="/" className="brand">
+                  <span className="brand-mark">F</span>
+                  <span className="brand-copy">
+                    <span className="brand-finova">Finova</span>
+                    <span className="brand-associates">Associates</span>
+                  </span>
+                </Link>
+                <p className="notice">
+                  Practical support for consumers navigating lawful debt review clearance, withdrawal assessment and credit-bureau status follow-through in South Africa.
+                </p>
+                <p className="micro">No guaranteed removals. Every route depends on the verified facts of the case.</p>
+              </div>
+
+              <div>
+                <h4>Services</h4>
+                {serviceLinks.map(([href, label]) => (
+                  <Link key={href} href={href}>{label}</Link>
+                ))}
+              </div>
+
+              <div>
+                <h4>Company</h4>
+                {companyLinks.map(([href, label]) => (
+                  <Link key={href} href={href}>{label}</Link>
+                ))}
+              </div>
+            </div>
+            <div className="container footer-bottom">
+              <span>Finova Associates · South Africa</span>
+              <span>Clear process. Verified records. Human guidance.</span>
+            </div>
+          </footer>
+        </div>
+      </body>
+    </html>
+  );
+}

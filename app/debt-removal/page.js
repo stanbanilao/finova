@@ -1,2 +1,90 @@
 import Link from "next/link";
-export default function DebtRemoval(){return <main><section className="hero"><div className="container hero-grid"><div><span className="eyebrow">Debt review removal support</span><h1>Understand the route before you act.</h1><p>Debt review is regulated, and “removal” is not one single process. The right route depends on whether you are still under review, whether a court order was granted, whether debts have been settled and whether you meet the legal requirements for clearance or withdrawal.</p><div className="hero-actions"><Link className="button" href="/eligibility">Check eligibility</Link><Link className="button secondary" href="/contact">Speak to Finova</Link></div></div><div className="hero-card"><h3>Possible routes</h3><span className="pill">Clearance certificate route</span><span className="pill">Pre-court withdrawal assessment</span><span className="pill">Court-order review</span><span className="pill">Bureau follow-up</span><p className="notice">The applicable route depends on your specific circumstances and supporting records.</p></div></div></section><section className="section alt"><div className="container grid-3"><div className="card"><h3>When debts are paid</h3><p>If the relevant obligations are settled and the statutory requirements are met, a clearance-certificate route may apply.</p></div><div className="card"><h3>Before a court order</h3><p>Some consumers may have a withdrawal path before a restructuring order is granted, depending on the stage and facts of the case.</p></div><div className="card"><h3>After a court order</h3><p>Cases involving an existing restructuring order can require a more formal legal review. Finova first establishes the record before advising the next practical step.</p></div></div></section><section className="section"><div className="container"><div className="section-title"><h2>What Finova helps you organise</h2></div><div className="grid-2"><div className="card"><h3>Case records</h3><p>Debt review status, debt counsellor information, court documentation where applicable and creditor details.</p></div><div className="card"><h3>Settlement information</h3><p>Paid-up letters, settlement confirmations and current account information where relevant.</p></div><div className="card"><h3>Affordability evidence</h3><p>Where a withdrawal route depends on improved financial circumstances, supporting affordability information may be required.</p></div><div className="card"><h3>Final status confirmation</h3><p>We help track the process through the relevant confirmation and bureau update stages where applicable.</p></div></div></div></section></main>}
+
+export const metadata = {
+  title: "Debt Review Removal",
+  description: "Understand debt review clearance, withdrawal assessment and credit-bureau follow-through routes in South Africa.",
+};
+
+export default function DebtRemoval() {
+  return (
+    <main>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div>
+            <span className="eyebrow">Debt review flag removal</span>
+            <h1>Understand the route <span className="accent">before you act.</span></h1>
+            <p>
+              Debt review is a regulated process. A flag cannot simply be “deleted” on demand. The correct route depends on your current status, whether a restructuring order exists, what has been settled and what the supporting records show.
+            </p>
+            <div className="hero-actions">
+              <Link className="button" href="/eligibility">Check my starting point</Link>
+              <Link className="button secondary" href="/process">See the full process</Link>
+            </div>
+          </div>
+
+          <div className="hero-card surface-3d">
+            <span className="eyebrow">Possible pathways</span>
+            <h3>One goal. Different legal positions.</h3>
+            <div>
+              <span className="pill">Clearance certificate route</span>
+              <span className="pill">Pre-order withdrawal assessment</span>
+              <span className="pill">Court-order record review</span>
+              <span className="pill">Paid-up verification</span>
+              <span className="pill">Credit-bureau follow-through</span>
+            </div>
+            <p className="notice">The applicable route can only be confirmed after reviewing the facts and documents relevant to your matter.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt">
+        <div className="container">
+          <div className="section-title">
+            <span className="eyebrow">Three common positions</span>
+            <h2>Your status determines what happens next.</h2>
+          </div>
+          <div className="grid-3">
+            <article className="card">
+              <span className="card-index">01 / PAID UP</span>
+              <h3>Relevant debts settled</h3>
+              <p>If the required obligations are settled and the statutory conditions are met, a formal clearance route may be available.</p>
+            </article>
+            <article className="card">
+              <span className="card-index">02 / EARLY STAGE</span>
+              <h3>No restructuring order yet</h3>
+              <p>Depending on the facts and current financial position, a withdrawal route may need to be assessed before any formal order is in place.</p>
+            </article>
+            <article className="card">
+              <span className="card-index">03 / ORDER EXISTS</span>
+              <h3>Court order on record</h3>
+              <p>An existing restructuring order changes the position. The order, payment history and current records should be reviewed before the next step is proposed.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-title">
+            <span className="eyebrow">What we verify</span>
+            <h2>Strong cases begin with a clean record set.</h2>
+          </div>
+          <div className="grid-2">
+            <article className="card"><div className="card-icon">01</div><h3>Debt review status</h3><p>Current status information, debt counsellor details and the stage reached in the debt review process.</p></article>
+            <article className="card"><div className="card-icon">02</div><h3>Settlement evidence</h3><p>Paid-up letters, settlement confirmations and account information where relevant.</p></article>
+            <article className="card"><div className="card-icon">03</div><h3>Court documentation</h3><p>Orders or applications where they form part of the matter and affect the lawful route forward.</p></article>
+            <article className="card"><div className="card-icon">04</div><h3>Final status hand-offs</h3><p>Clearance or other confirmed status, followed by the appropriate bureau update process where applicable.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container quote-panel">
+          <span className="eyebrow">Important</span>
+          <blockquote>No instant deletion. No guaranteed result.</blockquote>
+          <p>Finova can improve the organisation, clarity and follow-through of your matter. Timelines and outcomes can still depend on debt counsellors, credit providers, courts where applicable, credit bureaus and the verified facts of your case.</p>
+        </div>
+      </section>
+    </main>
+  );
+}
